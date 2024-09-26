@@ -1,0 +1,30 @@
+@startuml
+title Agentic RAG Pipeline in NVIDIA Workbench
+
+actor "User" as user
+
+package "NVIDIA Workbench" {
+  component "Agentic RAG Orchestrator" as orchestrator
+  component "Document Ingestion Pipeline" as ingestion
+  component "Document Indexing" as indexing
+  component "Document Retriever" as retriever
+  component "NVIDIA Jetson Knowledgebase" as knowledgebase
+  component "NVIDIA GPT Model" as model
+  component "Response Generator" as generator
+  component "Knowledge Database" as db
+}
+
+user --> orchestrator : Query
+orchestrator --> ingestion : Ingest NVIDIA Jetson Course Data
+ingestion --> knowledgebase : Store Knowledge Documents
+knowledgebase --> indexing : Index Documents
+indexing --> db : Store Index
+orchestrator --> retriever : Search Query in Index
+retriever --> db : Retrieve Relevant Documents
+retriever --> orchestrator : Send Relevant Documents
+orchestrator --> model : Pass Query & Documents
+model --> generator : Generate Response
+generator --> orchestrator : Return Generated Response
+orchestrator --> user : Send Response
+
+@enduml
