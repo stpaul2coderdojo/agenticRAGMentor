@@ -38,7 +38,7 @@ This project implements an Agentic Retrieval-Augmented Generation (RAG) pipeline
 
 ## Architecture Overview
 
-![Agentic RAG Pipeline](./Architecture Diagram RAG.png) <!-- Add a reference to the PlantUML generated architecture diagram image if available -->
+[Agentic RAG Pipeline](./Architecture Diagram RAG.png) <!-- Add a reference to the PlantUML generated architecture diagram image if available -->
 
 The architecture consists of the following components:
 
